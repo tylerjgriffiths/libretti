@@ -11,7 +11,7 @@
 ** Libretti
    
   Each opera gets a subfolder with a two-letter acronym.
-  Under each folder is a series of files <acronym>_<lang>.tex,
+  Under each folder is a series of files =<acronym>_<lang>.tex=,
   the libretto in that language---translated (if extant) or original.
 
   The currently available libretti and languages are listed below.
@@ -19,10 +19,10 @@
   |---------+-----------------+----------------+-----------|
   | Acronym | Title           | Composer       | Languages |
   |---------+-----------------+----------------+-----------|
-  | dr      | Das Rheingold   | Richard Wagner | de        |
-  | dw      | Die Walküre     | Richard Wagner | de        |
-  | si      | Siegfried       | Richard Wagner | de        |
-  | gd      | Götterdämmerung | Richard Wagner | de        |
+  | =dr=    | Das Rheingold   | Richard Wagner | de        |
+  | =dw=    | Die Walküre     | Richard Wagner | de        |
+  | =si=    | Siegfried       | Richard Wagner | de        |
+  | =gd=    | Götterdämmerung | Richard Wagner | de        |
   |---------+-----------------+----------------+-----------|
 
 ** Books
@@ -33,9 +33,9 @@
 
    The currently included books are listed below. 
 
-   |---------+-------------------------+----------------|
-   | Acronym | Book                    | Contents       |
-   |---------+-------------------------+----------------|
-   | ring    | Der Ring des Nibelungen | dr, dw, si, gd |
-   |---------+-------------------------+----------------|
+   |---------+-------------------------+------------------------|
+   | Acronym | Book                    | Contents               |
+   |---------+-------------------------+------------------------|
+   | =ring=  | Der Ring des Nibelungen | =dr=, =dw=, =si=, =gd= |
+   |---------+-------------------------+------------------------|
 
