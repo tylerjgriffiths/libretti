@@ -5,3 +5,37 @@
 
   This repo will contain various opera/music drama/Bühnenweihfestspiele libretti
   typeset in TeX. 
+
+* Organization
+
+** Libretti
+   
+  Each opera gets a subfolder with a two-letter acronym.
+  Under each folder is a series of files <acronym>_<lang>.tex,
+  the libretto in that language---translated (if extant) or original.
+
+  The currently available libretti and languages are listed below.
+  
+  |---------+-----------------+----------------+-----------|
+  | Acronym | Title           | Composer       | Languages |
+  |---------+-----------------+----------------+-----------|
+  | dr      | Das Rheingold   | Richard Wagner | de        |
+  | dw      | Die Walküre     | Richard Wagner | de        |
+  | si      | Siegfried       | Richard Wagner | de        |
+  | gd      | Götterdämmerung | Richard Wagner | de        |
+  |---------+-----------------+----------------+-----------|
+
+** Books
+
+   The libretti are not designed to compile alone, rather they
+   are included in a collection as a single volume.
+   These are found under =books/=
+
+   The currently included books are listed below. 
+
+   |---------+-------------------------+----------------|
+   | Acronym | Book                    | Contents       |
+   |---------+-------------------------+----------------|
+   | ring    | Der Ring des Nibelungen | dr, dw, si, gd |
+   |---------+-------------------------+----------------|
+

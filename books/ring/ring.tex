@@ -1,0 +1,190 @@
+\documentclass[a5paper]{memoir}
+\usepackage{etex}
+
+%% Use UTF-8 encoding for input, to allow for
+%% use of äöüß instead of \"a\"o\"u\ss.
+\usepackage[utf8]{inputenc}
+
+%% Set paper size.
+\usepackage[a5paper]{geometry}
+
+%% Use German versions of "Part", etc. in the
+%% produced document.
+\usepackage[german]{babel}
+
+%% =dramatist= is used to set the text of the operas.
+\usepackage{dramatist}
+
+%% pgfornaments provides some nice vector motifs.
+\usepackage{pgfornament}
+
+%% Add hyperlinks for ToC.
+\usepackage{hyperref}
+
+%% Garamond as the main document font.
+\usepackage{garamondx}
+
+%% Good microtypography.
+\usepackage{microtype}
+
+%% Set title information.
+\title{\HUGE \emph{der} \\ RING \\ \emph{des} \\ NIBELUNGEN}
+\author{Richard Wagner}
+\date{}
+
+\nouppercaseheads
+
+\providecommand{\saythescene}{Akt {\printactnum}, Szene {\printscenenum}}
+\makeevenhead{headings}%
+    {\thepage}{\textit{Der Ring des Nibelungen}}{}
+\makeoddhead{headings}{}{\textit{\playname{} --- {\saythescene}}}{\thepage}
+%\makeevenfoot{headings}{}{}{(Copyright notice)}
+%\makeoddfoot{headings}{(Copyright notice)}{}{}
+\renewcommand{\scenecontentsline}{\scenename~\Roman{scene}}
+\renewcommand{\actcontentsline}{\actname~\Roman{act}}
+
+\let\realscene\scene
+\renewcommand\scene[1]{\vspace{1em}\realscene{#1}}
+
+\begin{document}
+
+\sloppy
+
+\frontmatter
+
+%% A bastard-title.
+\thispagestyle{empty}
+\begin{centering}
+  \centering
+  \vspace*{5cm}
+  \hfill\begin{minipage}{5cm}
+    \centering
+    \textsc{Der Ring des Nibelungen}
+    
+  \vspace*{0.2cm}
+  \pgfornament[width=2.5cm]{75}
+  \end{minipage}
+\end{centering}
+
+
+\cleardoublepage
+
+%% Print the full title page.
+\thispagestyle{empty}
+\maketitle
+
+\cleardoublepage
+
+%% Set some lengths for the ToC page.
+%% We use the chapter level for acts, so we reduce
+%% the spacing between Part (corresponding to Opera)
+%% and act. We also set hspacing for Chapters and
+%% Sections.
+\setlength{\cftbeforechapterskip}{3pt}
+\setlength{\cftchapterindent}{1em}
+\setlength{\cftsectionindent}{1.6em}
+
+%% Print table of contents
+\tableofcontents
+
+\mainmatter
+
+%% This is German, after all.
+\renewcommand{\actname}{Akt}
+\renewcommand{\scenename}{Szene}
+
+%% Don't print Act-number in scene titles.
+\renewcommand{\printscenenum}{\scenenumfont \thescene}
+
+\makeatletter
+\renewcommand{\@direct}[1]{%
+    \if@drverse
+    \vskip2\normallineskip
+    \parbox[b]{\dirwidth}{\dirdelimiter{{\textit{#1}}}}\@centercr
+    \else
+    \dirdelimiter{{\textit{#1}}}\unskip
+    \fi
+  }
+  \makeatother
+  
+%% Declare the characters.
+\Character{Alberich}{Alberich}
+\Character{Br\"unnhilde}{Brunnhilde}
+\Character{Die Dritte Norn}{DieDritteNorn}
+\Character{Die Erste Norn}{DieErsteNorn}
+\Character{Die Zweite Norn}{DieZweiteNorn}
+\Character{Donner}{Donner}
+\Character{Erda}{Erda}
+\Character{Fafner}{Fafner}
+\Character{Fasolt}{Fasolt}
+\Character{Flosshilde}{Flosshilde}
+\Character{Freia}{Freia}
+\Character{Fricka}{Fricka}
+\Character{Froh}{Froh}
+\Character{Gerhilde}{Gerhilde}
+\Character{Grimgerde}{Grimgerde}
+\Character{Gunther}{Gunther}
+\Character{Gutrune}{Gutrune}
+\Character{Hagen}{Hagen}
+\Character{Helmwige}{Helmwige}
+\Character{Hunding}{Hunding}
+\Character{Loge}{Loge}
+\Character{Mime}{Mime}
+\Character{Ortlinde}{Ortlinde}
+\Character{Roßweiße}{Rossweisse}
+\Character{Schwertleite}{Schwertleite}
+\Character{Siegfried}{Siegfried}
+\Character{Sieglinde}{Sieglinde}
+\Character{Siegmund}{Siegmund}
+\Character{Siegrune}{Siegrune}
+\Character{Waltraute}{Waltraute}
+\Character{Wanderer}{Wanderer}
+\Character{Wellgunde}{Wellgunde}
+\Character{Woglinde}{Woglinde}
+\Character{Wotan}{Wotan}
+
+
+
+
+%% Print the operas.
+%% We need to reset the Act counters between each, as
+%% =dramatist= is only really designed to handle _one_
+%% play per document.
+
+%% Der Vorabend...
+\let\oldsaythescene\saythescene
+\renewcommand{\saythescene}{Szene \printscenenum}
+\providecommand{\playname}{Das Rheingold}
+\part{Das Rheingold}
+\input{../../dr/dr_de.tex}
+
+\cleardoublepage
+
+\part{Die Walk\"ure}
+\let\saythescene\oldsaythescene
+\renewcommand{\playname}{Die Walküre}
+\setcounter{act}{0}
+\input{../../dw/dw_de.tex}
+
+\part{Siegfried}
+\setcounter{act}{0}
+\renewcommand{\playname}{Siegfried}
+\input{../../si/si_de.tex}
+
+%% Götterdämmerung has some scenes outside of
+%% any act. We thus also have to reset the Scene
+%% counter ourselves, else we will just continue
+%% numbering as if we were still in Siegfried, Act 3.
+\renewcommand{\playname}{Götterdämmerung}
+\setcounter{act}{0}
+\setcounter{scene}{0}
+\part{G\"otterd\"ammerung}
+\input{../../gd/gd_de.tex}
+
+\end{document}
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
