@@ -6,6 +6,10 @@
   This repo will contain various opera/music drama/Bühnenweihfestspiele libretti
   typeset in TeX. 
 
+* Typesetting
+
+  For the most part, the libretti are set in \LaTeX using the =dramatist= package.
+  
 * Organization
 
 ** Libretti
