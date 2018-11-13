@@ -1,0 +1,7 @@
+#+TITLE: Libretti
+#+AUTHOR: Tyler Griffiths
+
+* Introduction
+
+  This repo will contain various opera/music drama/Bühnenweihfestspiele libretti
+  typeset in TeX. 
