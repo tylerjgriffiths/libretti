@@ -20,14 +20,15 @@
 
   The currently available libretti and languages are listed below.
   
-  |---------+-----------------+----------------+-----------|
-  | Acronym | Title           | Composer       | Languages |
-  |---------+-----------------+----------------+-----------|
-  | =dr=    | Das Rheingold   | Richard Wagner | de        |
-  | =dw=    | Die Walküre     | Richard Wagner | de        |
-  | =si=    | Siegfried       | Richard Wagner | de        |
-  | =gd=    | Götterdämmerung | Richard Wagner | de        |
-  |---------+-----------------+----------------+-----------|
+  |---------+--------------------------------+----------------+-----------|
+  | Acronym | Title                          | Composer       | Languages |
+  |---------+--------------------------------+----------------+-----------|
+  | =dr=    | Das Rheingold                  | Richard Wagner | de        |
+  | =dw=    | Die Walküre                    | Richard Wagner | de        |
+  | =si=    | Siegfried                      | Richard Wagner | de        |
+  | =gd=    | Götterdämmerung                | Richard Wagner | de        |
+  | =mn=    | Die Meistersinger von Nürnberg | Richard Wagner | de        |
+  |---------+--------------------------------+----------------+-----------|
 
 ** Books
 
@@ -37,9 +38,10 @@
 
    The currently included books are listed below. 
 
-   |---------+-------------------------+------------------------|
-   | Acronym | Book                    | Contents               |
-   |---------+-------------------------+------------------------|
-   | =ring=  | Der Ring des Nibelungen | =dr=, =dw=, =si=, =gd= |
-   |---------+-------------------------+------------------------|
+   |----------+-----------------------------------------------------+-------------------------|
+   | Acronym  | Book                                                | Contents                |
+   |----------+-----------------------------------------------------+-------------------------|
+   | =ring=   | Der Ring des Nibelungen                             | =dr=, =dw=, =si=, =gd=  |
+   | =single= | Barebones example for typesetting a single libretto | =mn= as an illustration |
+   |----------+-----------------------------------------------------+-------------------------|
 
